@@ -2,8 +2,10 @@ package socialdistancing;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
+import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -29,8 +31,31 @@ public class Building extends JPanel implements ActionListener{
 	Timer timer; //Event control	
 	int time = 0; //Track time as the simulation runs
 	
+	private ArrayList<Wall> newWalls = new ArrayList<Wall>();
+	
+	
 	/* constructor will setup our main Graphic User Interface - a simple Frame! */
 	public Building(Control ctl, String title) {
+		
+		Wall vWall1 = new Wall(550, 0, "SocialDistancingImages/wall2.png", true);
+		 Wall vWall2 = new Wall(200, 0, "SocialDistancingImages/wall2.png", true);
+		 Wall vWall3 = new Wall(550, 400, "SocialDistancingImages/wall2.png", true);
+		 Wall vWall4 = new Wall(200, 400, "SocialDistancingImages/wall2.png", true);
+		
+		 Wall hWall1 = new Wall(620, 160, "SocialDistancingImages/wall1.png", false);
+		 Wall hWall2 = new Wall(-25, 160, "SocialDistancingImages/wall1.png", false);
+		 Wall hWall3 = new Wall(620, 400, "SocialDistancingImages/wall1.png", false);
+		 Wall hWall4 = new Wall(-25, 400, "SocialDistancingImages/wall1.png", false);
+		 
+		
+		 newWalls.add(vWall1);
+		 newWalls.add(hWall1);
+		 newWalls.add(vWall2);
+		 newWalls.add(hWall2);
+		 newWalls.add(vWall3);
+		 newWalls.add(hWall3);
+		 newWalls.add(vWall4);
+		 newWalls.add(hWall4);
 		// used for Control callback
 		this.control = ctl;
 		
@@ -48,6 +73,20 @@ public class Building extends JPanel implements ActionListener{
 		frame.add(this); //add this class (JPanel) to the JFrame
 	}
 	
+	public void paintWalls(Graphics g) {
+
+		//draws vertical walls
+		/*FIX HERE TO WORK WITH ARRAYLIST!!!!!!! */
+		//sets text color
+		g.setColor(Color.BLACK);
+		g.setFont(new Font("Roboto", Font.BOLD, 20));
+		
+		g.drawString("Sprouts", 610, 50);
+		g.drawString("Scripps Medical", 5, 50);
+		g.drawString("Board and Brew", 5, 440);
+		g.drawString("Mr. M's House", 590, 440);
+		
+	}
 	//activation of Simulator separated from Constructor 
 	public void activate() {
 		//Timer for animation
