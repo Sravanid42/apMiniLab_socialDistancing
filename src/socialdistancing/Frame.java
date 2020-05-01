@@ -21,7 +21,7 @@ import javax.swing.Timer;
 	Simulator implements an ActionListener which adds the method actionPerformed. This method is invoked by the 
 	animation timer every timerValue(16ms).
 */
-public class Building extends JPanel implements ActionListener{
+public class Frame extends JPanel implements ActionListener{
 	// serial suppresses warning
 	private static final long serialVersionUID = 1L;
 	
@@ -35,7 +35,7 @@ public class Building extends JPanel implements ActionListener{
 	
 	
 	/* constructor will setup our main Graphic User Interface - a simple Frame! */
-	public Building(Control ctl, String title) {
+	public Frame(Control ctl, String title) {
 		
 		Wall vWall1 = new Wall(550, 0, "SocialDistancingImages/wall2.png", true);
 		 Wall vWall2 = new Wall(200, 0, "SocialDistancingImages/wall2.png", true);
@@ -77,6 +77,7 @@ public class Building extends JPanel implements ActionListener{
 
 		//draws vertical walls
 		/*FIX HERE TO WORK WITH ARRAYLIST!!!!!!! */
+		
 		//sets text color
 		g.setColor(Color.BLACK);
 		g.setFont(new Font("Roboto", Font.BOLD, 20));
