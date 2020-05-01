@@ -37,7 +37,7 @@ public class Frame extends JPanel implements ActionListener{
 	/* constructor will setup our main Graphic User Interface - a simple Frame! */
 	public Frame(Control ctl, String title) {
 		
-		Wall vWall1 = new Wall(550, 0, "SocialDistancingImages/wall2.png", true);
+		 Wall vWall1 = new Wall(550, 0, "SocialDistancingImages/wall2.png", true);
 		 Wall vWall2 = new Wall(200, 0, "SocialDistancingImages/wall2.png", true);
 		 Wall vWall3 = new Wall(550, 400, "SocialDistancingImages/wall2.png", true);
 		 Wall vWall4 = new Wall(200, 400, "SocialDistancingImages/wall2.png", true);
@@ -56,6 +56,7 @@ public class Frame extends JPanel implements ActionListener{
 		 newWalls.add(hWall3);
 		 newWalls.add(vWall4);
 		 newWalls.add(hWall4);
+		 
 		// used for Control callback
 		this.control = ctl;
 		
@@ -77,6 +78,10 @@ public class Frame extends JPanel implements ActionListener{
 
 		//draws vertical walls
 		/*FIX HERE TO WORK WITH ARRAYLIST!!!!!!! */
+		for (int i = 0; i < newWalls.length; i++)
+		{
+			g.drawImage(newWalls[i].getImage(), newWalls[i].getX(), newWalls[i].getY(), view);
+		}
 		
 		//sets text color
 		g.setColor(Color.BLACK);

@@ -10,7 +10,7 @@ public class Control {
 		String title = "Social Distance Simulation";
 		//Model and View
 		ArrayList<Person> model; //the community of Person objects	
-		Building view; //JPanel graphics window
+		Frame view; //JPanel graphics window
 		
 		// counters for "this" simulation instance
 		public int numInfected = 0;
@@ -97,7 +97,7 @@ public class Control {
 		 */
 		public void runSimulation() {
 			//Setup to the Simulation Panel/Frame
-			Building view = new Building(this, title);
+			Frame view = new Frame(this, title);
 			
 			//Setup the People
 			model = new ArrayList<Person>();
