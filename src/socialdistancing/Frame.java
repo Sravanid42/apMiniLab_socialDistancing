@@ -46,7 +46,6 @@ public class Frame extends JPanel implements ActionListener{
 		 Wall hWall2 = new Wall(-25, 160, "SocialDistancingImages/wall1.png", false);
 		 Wall hWall3 = new Wall(620, 400, "SocialDistancingImages/wall1.png", false);
 		 Wall hWall4 = new Wall(-25, 400, "SocialDistancingImages/wall1.png", false);
-		 
 		
 		 newWalls.add(vWall1);
 		 newWalls.add(hWall1);
@@ -78,9 +77,9 @@ public class Frame extends JPanel implements ActionListener{
 
 		//draws vertical walls
 		/*FIX HERE TO WORK WITH ARRAYLIST!!!!!!! */
-		for (int i = 0; i < newWalls.length; i++)
+		for (int i = 0; i < newWalls.size(); i++)
 		{
-			g.drawImage(newWalls[i].getImage(), newWalls[i].getX(), newWalls[i].getY(), view);
+			g.drawImage(newWalls[i].getImage(), newWalls[i].getX(), newWalls[i].getY(), frame);
 		}
 		
 		//sets text color
