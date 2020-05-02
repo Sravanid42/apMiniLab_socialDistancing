@@ -81,7 +81,6 @@ public class Frame extends JPanel implements ActionListener{
 		for (Wall w:newWalls)
 		{
 			g.drawImage(w.getImage(), w.getX(), w.getY(), frame);
-			System.out.println(w);
 		}
 		
 		//sets text color
