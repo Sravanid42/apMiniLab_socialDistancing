@@ -32,11 +32,12 @@ public class Frame extends JPanel implements ActionListener{
 	int time = 0; //Track time as the simulation runs
 	
 	private ArrayList<Wall> newWalls = new ArrayList<Wall>();
+	private ArrayList<Rectangle> rect = new ArrayList<Rectangle>();
 	
 	
 	/* constructor will setup our main Graphic User Interface - a simple Frame! */
 	public Frame(Control ctl, String title) {
-		
+
 		 Wall vWall1 = new Wall(550, 0, "SocialDistancingImages/wall2.png", true);
 		 Wall vWall2 = new Wall(200, 0, "SocialDistancingImages/wall2.png", true);
 		 Wall vWall3 = new Wall(550, 400, "SocialDistancingImages/wall2.png", true);
@@ -56,6 +57,11 @@ public class Frame extends JPanel implements ActionListener{
 		 newWalls.add(vWall4);
 		 newWalls.add(hWall4);
 		 
+		 for(Wall w: newWalls)
+	        {
+	            rect.add(w.getBounds());
+	        }
+		 
 		// used for Control callback
 		this.control = ctl;
 		
@@ -72,18 +78,30 @@ public class Frame extends JPanel implements ActionListener{
 		frame.setVisible(true);
 		frame.add(this); //add this class (JPanel) to the JFrame
 	}
+
+	
+	//two getters for wall and rectangle
+    public ArrayList<Wall> getW()
+    {
+        return newWalls;
+    }
+    
+    public ArrayList<Rectangle> getR()
+    {
+        return rect;
+    }
 	
 	public void paintWalls(Graphics g) {
 
 		//draws vertical walls
 		/*FIX HERE TO WORK WITH ARRAYLIST!!!!!!! */
-		/**/
-		for (Wall w:newWalls)
+
+		for (Wall w: this.getW())
 		{
-			g.drawImage(w.getImage(), w.getX(), w.getY(), frame);
+			g.drawImage(w.getImage(),w.getX(), w.getY(),this);
 		}
 		
-		//sets text color
+		//sets text color 
 		g.setColor(Color.BLACK);
 		g.setFont(new Font("Roboto", Font.BOLD, 20));
 		
@@ -91,6 +109,7 @@ public class Frame extends JPanel implements ActionListener{
 		g.drawString("Scripps Medical", 5, 50);
 		g.drawString("Board and Brew", 5, 440);
 		g.drawString("Mr. M's House", 590, 440);
+		
 		
 	}
 	//activation of Simulator separated from Constructor 
@@ -121,7 +140,7 @@ public class Frame extends JPanel implements ActionListener{
 		
 		//events
 		super.paintComponent(g); // a necessary call to the parent paint method, required for proper screen refreshing
-		paintWalls(g);
+		this.paintWalls(g);
 		control.paintPersons(g); // repaint all objects in simulation
 		
 	} 
