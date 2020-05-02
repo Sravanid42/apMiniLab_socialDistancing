@@ -77,9 +77,11 @@ public class Frame extends JPanel implements ActionListener{
 
 		//draws vertical walls
 		/*FIX HERE TO WORK WITH ARRAYLIST!!!!!!! */
-		for (int i = 0; i < newWalls.size(); i++)
+		/**/
+		for (Wall w:newWalls)
 		{
-			g.drawImage(newWalls.get(i).getImage(), newWalls.get(i).getX(), newWalls.get(i).getY(), frame);
+			g.drawImage(w.getImage(), w.getX(), w.getY(), frame);
+			System.out.println(w);
 		}
 		
 		//sets text color
