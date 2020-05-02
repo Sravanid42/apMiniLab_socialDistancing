@@ -154,7 +154,8 @@ public class Control {
 		}
 		
 		//Declares Wall sprites and positions of walls
-		static Wall vWall1 = new Wall(550, 0, "SocialDistancingImages/wall2.png", true);
+		
+		/*static Wall vWall1 = new Wall(550, 0, "SocialDistancingImages/wall2.png", true);
 		static Wall vWall2 = new Wall(200, 0, "SocialDistancingImages/wall2.png", true);
 		static Wall vWall3 = new Wall(550, 400, "SocialDistancingImages/wall2.png", true);
 		static Wall vWall4 = new Wall(200, 400, "SocialDistancingImages/wall2.png", true);
@@ -167,10 +168,11 @@ public class Control {
 		static Rectangle[] r = {vWall1.getBounds(), hWall1.getBounds(), vWall2.getBounds(), hWall2.getBounds(),
 				vWall3.getBounds(), hWall3.getBounds(), vWall4.getBounds(), hWall4.getBounds()};
 		
-		
+		*/
 		public void paintWalls(Graphics g) {
 
 			//draws vertical walls
+			/*
 			g.drawImage(vWall1.getImage(), vWall1.getX(), vWall1.getY(), view);
 			g.drawImage(vWall2.getImage(), vWall2.getX(), vWall2.getY(), view);
 			g.drawImage(vWall3.getImage(), vWall3.getX(), vWall3.getY(), view);
@@ -190,12 +192,12 @@ public class Control {
 			g.drawString("Scripps Medical", 5, 50);
 			g.drawString("Board and Brew", 5, 440);
 			g.drawString("Mr. M's House", 590, 440);
-			
+			*/
 		}
 		
 
 		public void personToWallCollision(Person p) {
-			
+			/*
 			Rectangle personRect = new Rectangle(p.x,p.y, p.width, p.height);
 			for(int i = 0; i < walls.length;i++)
 			{
@@ -206,7 +208,7 @@ public class Control {
 					}
 					else
 						p.vy *= -1;
-			}
+			}*/
 		}
 		
 }
